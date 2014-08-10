@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+50.times do |no|
+  Greeting.create(name: "テスト#{no}", comment: "コメント#{no}")
+end
