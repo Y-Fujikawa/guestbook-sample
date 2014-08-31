@@ -15,8 +15,11 @@ require 'capistrano/deploy'
 #   https://github.com/capistrano/rails
 #
 # require 'capistrano/rvm'
-# require 'capistrano/rbenv'
 # require 'capistrano/chruby'
+require 'capistrano/rbenv'
+set :rbenv_custom_path, '/home/ops/.rbenv'
+set :rbenv_ruby, "2.1.2"
+
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'

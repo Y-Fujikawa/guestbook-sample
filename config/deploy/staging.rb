@@ -48,4 +48,4 @@ server 'vagrant.local', roles: %w(app), user: 'ops', ssh_options: {
 #     # password: 'please use keys'
 #   }
 
-set :rails_env, :statging
+set :rails_env, :staging
