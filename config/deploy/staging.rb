@@ -4,9 +4,9 @@
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{deploy@example.com}
-role :web, %w{deploy@example.com}
-role :db,  %w{deploy@example.com}
+role :app, %w{ops@vagrant.local}
+role :web, %w{ops@vagrant.local}
+role :db,  %w{ops@vagrant.local}
 
 
 # Extended Server Syntax
@@ -15,7 +15,10 @@ role :db,  %w{deploy@example.com}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+# server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+server 'vagrant.local', roles: %w(app), user: 'ops', ssh_options: {
+  keys: [File.expand_path('~/.ssh/...')]
+}
 
 
 # Custom SSH Options
@@ -30,6 +33,7 @@ server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
+
 #
 # And/or per server (overrides global)
 # ------------------------------------
@@ -43,3 +47,5 @@ server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+set :rails_env, :statging
