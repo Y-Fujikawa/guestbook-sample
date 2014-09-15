@@ -1,7 +1,7 @@
 # -*- config: utf-8 -*-
 
 # Unicornのプロセスがリスンするアドレスとポートを指定
-listen "127.0.0.1:3000"
+listen "127.0.0.1:8080"
 
 # pid fileの位置を指定する
 pid "tmp/pids/unicorn.pid"
