@@ -37,20 +37,15 @@ set :scm, :git
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
+set :linked_dirs, (fetch(:linked_dirs) + ['tmp/pids'])
+
+# Unicorn周りの設定をする
+set :unicorn_rack_env, "none"
+set :unicorn_config_path, 'config/unicorn.rb'
+
+after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
-
-  desc 'Restart application'
-  set :linked_dirs, (fetch(:linked_dirs) + ['tmp/pids'])
-
-  # Unicorn周りの設定をする
-  set :unicorn_rack_env, "none"
-  set :unicorn_config_path, 'config/unicorn.rb'
-
-  after 'deploy:publishing', 'deploy:restart'
-  namespace :deploy do
-    task :restart do
-      invoke 'unicorn:restart'
-    end
+  task :restart do
+    invoke 'unicorn:restart'
   end
-
 end
