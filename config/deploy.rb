@@ -46,10 +46,11 @@ namespace :deploy do
   set :unicorn_rack_env, "none"
   set :unicorn_config_path, 'config/unicorn.rb'
 
-  after :publishing, :restart
-
-  after :restart, :clear_cache do
-    invoke 'unicorn:restart'
+  after 'deploy:publishing', 'deploy:restart'
+  namespace :deploy do
+    task :restart do
+      invoke 'unicorn:restart'
+    end
   end
 
 end
