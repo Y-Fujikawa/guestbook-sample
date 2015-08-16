@@ -44,6 +44,7 @@ group :development do
   gem 'capistrano-rbenv'
 
   gem 'pry-rails'
+  gem 'dotenv-rails'
 end
 
 # Use debugger

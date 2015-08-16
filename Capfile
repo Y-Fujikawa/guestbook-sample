@@ -17,8 +17,8 @@ require 'capistrano/deploy'
 # require 'capistrano/rvm'
 # require 'capistrano/chruby'
 require 'capistrano/rbenv'
-set :rbenv_custom_path, '/home/ops/.rbenv'
-set :rbenv_ruby, "2.1.2"
+set :rbenv_type, :system
+set :rbenv_ruby, '2.2.0'
 
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
