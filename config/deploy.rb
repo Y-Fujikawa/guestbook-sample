@@ -1,5 +1,5 @@
-# config valid only for Capistrano 3.1
-lock '3.2.1'
+# config valid only for Capistrano 3.4.0
+lock '3.4.0'
 
 set :application, 'guestbook-sample'
 set :repo_url, 'git@github.com:Y-Fujikawa/guestbook-sample.git'
@@ -31,7 +31,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets bundle public/system
 # Default value for default_env is {}
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
- path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH"
+  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH"
 }
 
 # Default value for keep_releases is 5
