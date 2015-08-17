@@ -43,7 +43,19 @@ set :unicorn_config_path, 'config/unicorn.rb'
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
+  desc 'Upload database.yml'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      upload!('config/database.yml', "#{shared_path}/config/database.yml")
+    end
+  end
+
   task :restart do
     invoke 'unicorn:restart'
   end
+
+  before :starting, :upload
 end
