@@ -3,8 +3,10 @@
 # Unicornのプロセスがリスンするアドレスとポートを指定
 listen "127.0.0.1:8080"
 
-# pid fileの位置を指定する
-pid "tmp/pids/unicorn.pid"
+# sock, pid fileの位置を指定する
+ROOT = File.dirname(File.dirname(__FILE__))
+listen  "/tmp/unicorn.sock"
+pid "/tmp/pids/unicorn.pid"
 
 # ワーカーの数を指定する
 worker_processes 2
@@ -16,7 +18,6 @@ timeout 15
 preload_app true
 
 # Unicronのログ出力先を指定
-ROOT = File.dirname(File.dirname(__FILE__))
 stdout_path "#{ROOT}/log/unicorn-stdout.log"
 stderr_path "#{ROOT}/log/unicorn-stderr.log"
 
