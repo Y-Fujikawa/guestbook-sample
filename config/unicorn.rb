@@ -1,11 +1,9 @@
 # -*- config: utf-8 -*-
 
 # Unicornのプロセスがリスンするアドレスとポートを指定
-listen "127.0.0.1:8080"
-
-# sock, pid fileの位置を指定する
-ROOT = File.dirname(File.dirname(__FILE__))
-listen  "/tmp/unicorn.sock"
+listen "/tmp/unicorn.sock"
+# pid fileの位置を指定する
+# Rails.rootを指定するとアプリ内箇所になる
 pid "/tmp/pids/unicorn.pid"
 
 # ワーカーの数を指定する
@@ -18,6 +16,7 @@ timeout 15
 preload_app true
 
 # Unicronのログ出力先を指定
+ROOT = File.dirname(File.dirname(__FILE__))
 stdout_path "#{ROOT}/log/unicorn-stdout.log"
 stderr_path "#{ROOT}/log/unicorn-stderr.log"
 
