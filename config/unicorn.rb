@@ -4,7 +4,8 @@
 listen "/tmp/unicorn.sock"
 # pid fileの位置を指定する
 # Rails.rootを指定するとアプリ内箇所になる
-pid "/tmp/pids/unicorn.pid"
+ROOT = File.dirname(File.dirname(__FILE__))
+pid "#{ROOT}/tmp/pids/unicorn.pid"
 
 # ワーカーの数を指定する
 worker_processes 2
@@ -16,7 +17,6 @@ timeout 15
 preload_app true
 
 # Unicronのログ出力先を指定
-ROOT = File.dirname(File.dirname(__FILE__))
 stdout_path "#{ROOT}/log/unicorn-stdout.log"
 stderr_path "#{ROOT}/log/unicorn-stderr.log"
 
