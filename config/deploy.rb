@@ -1,6 +1,11 @@
 # config valid only for Capistrano 3.4.0
 lock '3.4.0'
 
+set :user, 'www'
+set :password, 'sample'
+ssh_options[:keys] = "~/.ssh/id_rsa"
+set :use_sudo, false
+
 set :application, 'guestbook-sample'
 set :repo_url, 'git@github.com:Y-Fujikawa/guestbook-sample.git'
 
