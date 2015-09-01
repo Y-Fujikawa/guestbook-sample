@@ -3,7 +3,6 @@ lock '3.4.0'
 
 set :user, 'www'
 set :password, 'sample'
-ssh_options[:keys] = "~/.ssh/id_rsa"
 set :use_sudo, false
 
 set :application, 'guestbook-sample'
