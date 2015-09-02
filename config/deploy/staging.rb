@@ -49,3 +49,4 @@ server 'vagrant.local', roles: %w(app), user: 'www', ssh_options: {
 #   }
 
 set :rails_env, :staging
+set :unicorn_rack_env, :staging
