@@ -3,7 +3,7 @@
 # Supports bulk-adding hosts to roles, the primary server in each group
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
-
+# 各サーバの役割を記述
 role :app, %w{www@vagrant.local}
 role :web, %w{www@vagrant.local}
 role :db,  %w{www@vagrant.local}
@@ -48,5 +48,7 @@ server 'vagrant.local', roles: %w(app), user: 'www', ssh_options: {
 #     # password: 'please use keys'
 #   }
 
+# RAILS_ENV の指定
 set :rails_env, :staging
+# unicorn で利用する RACK_ENV の指定
 set :unicorn_rack_env, :staging
