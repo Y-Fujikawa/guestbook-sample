@@ -17,7 +17,7 @@ role :db,  %w{www@vagrant.local}
 
 # server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 server 'vagrant.local', roles: %w(app), user: 'www', ssh_options: {
-  keys: [File.expand_path('~/.ssh/...')]
+  keys: [File.expand_path('~/.ssh/id_rsa')]
 }
 
 
