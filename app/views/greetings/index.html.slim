@@ -1,0 +1,16 @@
+h1
+  | Greetings
+= render 'form'
+hr
+table.table.table-hover
+  tbody
+    - @greetings.each do |g|
+      tr
+        td.active[width="30%"]
+          = g.name
+          br
+          small.text-muted
+            = g.created_at
+        td
+          = g.comment
+= paginate @greetings
