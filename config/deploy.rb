@@ -54,6 +54,7 @@ namespace :deploy do
         execute "mkdir -p #{shared_path}/config"
       end
       upload!('config/database.yml', "#{shared_path}/config/database.yml")
+      upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
     end
   end
 

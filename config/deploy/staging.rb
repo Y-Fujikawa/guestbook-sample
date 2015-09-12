@@ -1,12 +1,15 @@
+require 'dotenv'
+Dotenv.load
+
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary server in each group
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 # 各サーバの役割を記述
-role :app, %w{www@vagrant.local}
-role :web, %w{www@vagrant.local}
-role :db,  %w{www@vagrant.local}
+role :app, %W(www@#{ENV['ENVIROMENT']})
+role :web, %W(www@#{ENV['ENVIROMENT']})
+role :db,  %W(www@#{ENV['ENVIROMENT']})
 
 
 # Extended Server Syntax
@@ -16,8 +19,9 @@ role :db,  %w{www@vagrant.local}
 # used to set extended properties on the server.
 
 # server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
-server 'vagrant.local', roles: %w(app), user: 'www', ssh_options: {
-  keys: [File.expand_path('~/.ssh/id_rsa')]
+server "#{ENV['ENVIROMENT']}", roles: %w(app), user: 'www', ssh_options: {
+  keys: [File.expand_path('~/.ssh/id_rsa')],
+  port: ENV['PORT']
 }
 
 
