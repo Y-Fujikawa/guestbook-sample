@@ -46,7 +46,6 @@ group :development do
   gem 'capistrano-rbenv'
 
   gem 'pry-rails'
-  gem 'dotenv-rails'
 
   # convert erb to slim
   gem 'html2slim'
@@ -58,3 +57,4 @@ end
 gem 'bootstrap-sass-rails'
 gem 'kaminari'
 gem 'therubyracer'
+gem 'dotenv-rails'

@@ -44,6 +44,7 @@ build/
 
 
 ### Rails ###
+.env
 *.rbc
 capybara-*.html
 .rspec
