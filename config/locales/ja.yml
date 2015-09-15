@@ -1,6 +1,14 @@
 ja:
+  errors:
+    common: "エラーがあります。"
   activerecord:
     attributes:
       greeting:
         name: "名前"
         comment: "コメント"
+    errors:
+      models:
+        greeting:
+          attributes:
+            name:
+              blank: "必ず入力してください。"

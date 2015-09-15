@@ -1,6 +1,15 @@
 en:
+  errors:
+    common: "Please fix the errors below."
   activerecord:
     attributes:
       greeting:
         name: "name"
         comment: "comment"
+    errors:
+      common: "Please fix the errors below."
+      models:
+        greeting:
+          attributes:
+            name:
+              blank: "Please enter sure ."

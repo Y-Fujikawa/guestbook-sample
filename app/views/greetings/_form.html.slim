@@ -1,8 +1,7 @@
-= form_for(@greeting, html: {class: 'form'}) do |f|
+= bootstrap_form_for(@greeting, html: {class: 'form'}) do |f|
+  = f.alert_message t('errors.common'), error_summary: false
   .form-group
-    = f.label :name, class: "control-label"
     = f.text_field :name, class: "form-control"
   .form-group
-    = f.label :comment, class: "control-label"
     = f.text_field :comment, class: "form-control"
   = f.submit "submit", class: "btn btn-default"

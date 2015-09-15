@@ -53,6 +53,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'bootstrap-sass-rails'
+gem 'bootstrap_form'
 gem 'kaminari'
 gem 'therubyracer'
 gem 'dotenv-rails'
