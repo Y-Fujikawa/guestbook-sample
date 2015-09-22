@@ -37,11 +37,12 @@ group :development do
   gem 'spring'
 
   # deploy
-  gem 'capistrano'
+  gem 'capistrano', '~> 3.0'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rbenv'
+  gem 'capistrano-maintenance', '~> 1.0'
 
   gem 'pry-rails'
 

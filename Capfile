@@ -25,6 +25,8 @@ require 'capistrano/bundler'
 require 'capistrano3/unicorn'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
+# Capistrano3でメンテナンスモードにする
+require 'capistrano/maintenance'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 # `lib/capistrano/tasks' に定義されたタスクを読み込む

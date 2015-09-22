@@ -45,6 +45,9 @@ set :keep_releases, 5
 set :unicorn_rack_env, "none"
 set :unicorn_config_path, 'config/unicorn.rb'
 
+# メンテナンス画面の配置場所
+set :maintenance_template_path, "./app/views/maintenance/maintenance.html.erb"
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   desc 'Upload database.yml'
