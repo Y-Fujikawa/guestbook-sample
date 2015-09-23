@@ -42,7 +42,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rbenv'
-  gem 'capistrano-maintenance', '~> 1.0'
+  gem 'capistrano-maintenance', '~> 1.0', require: false
 
   gem 'pry-rails'
 
