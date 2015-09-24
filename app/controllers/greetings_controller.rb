@@ -10,6 +10,7 @@ class GreetingsController < ApplicationController
 
     respond_to do |format|
       if @greeting.save
+        flash[:info] = 'Success'
         format.html { redirect_to greetings_path }
       else
         format.html { render action: 'index' }
