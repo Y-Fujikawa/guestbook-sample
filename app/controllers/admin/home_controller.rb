@@ -1,6 +1,4 @@
-class Admin::HomeController < ApplicationController
-  before_filter :authenticate_admin_user!
-
+class Admin::HomeController < Admin::AdminController
   def index
   end
 end

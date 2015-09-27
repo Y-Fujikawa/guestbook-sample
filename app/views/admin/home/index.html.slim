@@ -1,5 +1,8 @@
 - if admin_user_signed_in?
   Logged in as
-    = current_user.email .
+  '
+  strong = current_admin_user.email
+  '
+  = link_to "ログアウト", destroy_admin_user_session_path, method: :delete
 h1 Admin::Home#index
 p Find me in app/views/admin/home/index.html.slim
