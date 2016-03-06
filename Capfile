@@ -17,7 +17,7 @@ require 'capistrano/deploy'
 #   https://github.com/capistrano/rails
 require 'capistrano/rbenv'
 set :rbenv_type, :system
-set :rbenv_ruby, '2.2.0'
+set :rbenv_ruby, '2.3.0'
 
 # deploy:updated の前に bundle install してくれる
 require 'capistrano/bundler'
