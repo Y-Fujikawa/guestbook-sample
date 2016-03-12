@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery-ujs
-//= require bootstrap
+//= require admin-lte/bootstrap/js/bootstrap
+//= require admin-lte/dist/js/app.js
 //= require_tree .

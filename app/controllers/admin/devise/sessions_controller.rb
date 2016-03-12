@@ -1,5 +1,5 @@
-class Admin::SessionsController < Devise::SessionsController
-  layout "admin/layouts/application"
+class Admin::Devise::SessionsController < Devise::SessionsController
+  layout "admin/layouts/login"
 
   # Admin画面のログイン -> Adminホーム画面へリダイレクト
   def after_sign_in_path_for(resource)

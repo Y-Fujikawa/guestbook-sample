@@ -1,18 +1,22 @@
-h2
-  | Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    br
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "admin/devise/shared/links"
+.login-box
+  .login-logo
+    h2
+      | Log in
+  .login-box-body
+    p.login-box-msg
+      | Sign in to start your session
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-group.has-feedback
+        = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email"
+        span class="glyphicon glyphicon-envelope form-control-feedback"
+      .form-group.has-feedback
+        = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password"
+        span class="glyphicon glyphicon-lock form-control-feedback"
+      - if devise_mapping.rememberable?
+        .row
+          .col-xs-8
+            = f.check_box :remember_me
+            = f.label :remember_me
+      #col-xs-4.actions
+        = f.submit "Log in", class: "btn btn-primary btn-block btn-flat"
+    = render "admin/devise/shared/links"
