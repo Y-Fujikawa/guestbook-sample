@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'bower-rails'
+
 # Use unicorn as the app server
 group :staging, :production do
   gem 'unicorn'
@@ -49,8 +51,6 @@ group :development do
 
   # convert erb to slim
   gem 'html2slim'
-
-  gem 'bower-rails'
 end
 
 # Use debugger
