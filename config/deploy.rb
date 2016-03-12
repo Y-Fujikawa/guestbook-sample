@@ -7,6 +7,7 @@ set :use_sudo, false
 
 set :application, 'guestbook-sample'
 set :repo_url, 'git@github.com:Y-Fujikawa/guestbook-sample.git'
+set :branch, ENV['BRANCH'] || "master"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -30,7 +31,7 @@ set :pty, true
 set :linked_files, %w{config/database.yml config/secrets.yml}
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets bundle public/system public/assets}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets bundle public/system public/assets vendor/assets/bower_components}
 
 # Default value for default_env is {}
 set :default_env, {
@@ -66,3 +67,15 @@ namespace :deploy do
 
   before :starting, :upload
 end
+
+namespace :bower do
+  desc 'Install bower'
+  task :install do
+    on roles(:web) do
+      within release_path do
+        execute :rake, 'bower:install'
+      end
+    end
+  end
+end
+before 'deploy:compile_assets', 'bower:install'
