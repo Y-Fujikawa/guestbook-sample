@@ -1,0 +1,9 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "jquery-ujs": "latest",
+    "bootstrap": "latest",
+    "bootstrap-sass": "latest",
+    "fontawesome": "latest"
+  }
+}

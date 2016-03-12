@@ -19,8 +19,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # User Authorization
 gem 'devise'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -51,6 +49,8 @@ group :development do
 
   # convert erb to slim
   gem 'html2slim'
+
+  gem 'bower-rails'
 end
 
 # Use debugger
