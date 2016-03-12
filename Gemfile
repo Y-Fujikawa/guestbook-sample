@@ -51,6 +51,9 @@ group :development do
 
   # convert erb to slim
   gem 'html2slim'
+
+		# Local Mail Test
+		gem 'mailcatcher'
 end
 
 # Use debugger

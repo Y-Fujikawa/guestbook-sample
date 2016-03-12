@@ -1,3 +1,3 @@
-class Admin::PasswordsController < Devise::PasswordsController
-  layout "admin/layouts/application"
+class Admin::Devise::PasswordsController < Devise::PasswordsController
+  layout "admin/layouts/login"
 end

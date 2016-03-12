@@ -67,3 +67,7 @@ ja:
           attributes:
             name:
               blank: "必ず入力してください。"
+        admin_user:
+          attributes:
+            reset_password_token:
+              invalid: "リセットパスワードトークンが無効です。"
