@@ -8,6 +8,6 @@ class Admin::Devise::SessionsController < Devise::SessionsController
 
   # Admin画面のログアウト -> ログイン画面へリダイレクト
   def after_sign_out_path_for(resource)
-    admin_user_session_path
+    admin_admin_user_session_path
   end
 end
