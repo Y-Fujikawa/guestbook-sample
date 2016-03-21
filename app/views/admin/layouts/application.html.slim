@@ -9,11 +9,11 @@ html
   body class="hold-transition skin-blue sidebar-mini"
     .wrapper
       header class="main-header"
-        a> href="index2.html" class="logo"
+        a> href="#{admin_path}" class="logo"
           span class="logo-mini"
-            | Guest
+            | GB
           span class="logo-lg"
-            | Guest
+            | Guestbook
 
         nav class="navbar navbar-static-top" role="navigation"
           a> href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"
@@ -37,11 +37,11 @@ html
       aside class="main-sidebar"
         section class="sidebar"
           ul class="sidebar-menu"
-            li class="header" HEADER
+            li class="header" Sidebar
             li class="active"
               a> href="#"
-                i class="fa fa-link"
-                  span Guest List
+                i class="fa fa-table"
+                span Guest List
       .content-wrapper
         = yield
       footer class="main-footer"
