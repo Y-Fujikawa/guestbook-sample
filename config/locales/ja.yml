@@ -61,9 +61,20 @@ ja:
       greeting:
         name: "名前"
         comment: "コメント"
+      admin_user:
+        email: "メールアドレス"
+        password: "パスワード"
     errors:
       models:
         greeting:
           attributes:
             name:
               blank: "必ず入力してください。"
+        admin_user:
+          attributes:
+            email:
+              blank: "は必ず入力してください。"
+            password:
+              blank: "は必ず入力してください。"
+            reset_password_token:
+              invalid: "リセットパスワードトークンが無効です。"
