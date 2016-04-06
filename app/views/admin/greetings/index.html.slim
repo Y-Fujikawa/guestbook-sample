@@ -1,4 +1,26 @@
 section class="content-header"
-  h1 Admin::GreetingsController#index
+  h1 Greetings
   section class="content"
-    p Find me in app/views/admin/greetings/index.html.slim
+    table.table.table-hover
+      thead
+        tr
+          th
+            | id
+          th
+            | 名前
+          th
+            | コメント
+          th
+            | 作成日
+        tbody
+          - @greetings.each do |g|
+            tr
+              td
+                = g.id
+              td
+                = g.name
+              td
+                = g.comment
+              td
+                = g.created_at
+    = paginate @greetings
