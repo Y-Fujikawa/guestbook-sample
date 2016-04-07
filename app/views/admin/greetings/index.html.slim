@@ -1,26 +1,36 @@
 section class="content-header"
   h1 Greetings
   section class="content"
-    table.table.table-hover
-      thead
-        tr
-          th
-            | id
-          th
-            | 名前
-          th
-            | コメント
-          th
-            | 作成日
-        tbody
-          - @greetings.each do |g|
-            tr
-              td
-                = g.id
-              td
-                = g.name
-              td
-                = g.comment
-              td
-                = g.created_at
-    = paginate @greetings
+    .row
+      .col-xs-12
+        .box
+          .box-header
+            h3.box-title
+              | List
+          .box-body.table-responsive.o-padding
+            table.table.table-hover.table-bordered
+              thead
+              tr
+                  th
+                    | id
+                  th
+                    | 名前
+                  th
+                    | コメント
+                  th
+                    | 作成日
+                  th
+              tbody
+                - @greetings.each do |g|
+                  tr
+                    td
+                      = g.id
+                    td
+                      = g.name
+                    td
+                      = g.comment
+                    td
+                      = g.created_at
+                    td.text-center.a_area
+                      = link_to "編集", admin_greeting_path(id: g.id), class: "btn btn-default btn-flat text-center"
+            = paginate @greetings
