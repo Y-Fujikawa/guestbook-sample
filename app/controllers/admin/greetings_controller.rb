@@ -4,6 +4,14 @@ class Admin::GreetingsController < Admin::AdminController
   def index
   end
 
+  def show
+    @greeting = Greeting.find(params[:id])
+  end
+
+  def update
+    @greeting = Greeting.find(params[:id])
+  end
+
   private
 
   def set_greetings

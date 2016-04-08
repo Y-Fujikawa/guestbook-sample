@@ -32,5 +32,5 @@ section class="content-header"
                     td
                       = g.created_at
                     td.text-center.a_area
-                      = link_to "編集", admin_greeting_path(id: g.id), class: "btn btn-default btn-flat text-center"
+                      = link_to "詳細", admin_greeting_path(id: g.id), class: "btn btn-default btn-flat text-center"
             = paginate @greetings

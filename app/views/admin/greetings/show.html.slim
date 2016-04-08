@@ -1,0 +1,18 @@
+section class="content-header"
+  h1 Greetings::show
+  section class="content"
+    = form_for ([:admin, @greeting]) do |f|
+      .field
+        = f.label :id
+      .field
+        = f.text_field :id, disabled: true, readonly: true
+      .field
+        = f.label :name
+      .field
+        = f.text_field :name, disabled: true, readonly: true
+      .field
+        = f.label :comment
+      .field
+        = f.text_field :comment, disabled: true, readonly: true
+      = f.submit "編集"
+    = @greeting.inspect
