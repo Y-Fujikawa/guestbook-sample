@@ -14,5 +14,4 @@ section class="content-header"
         = f.label :comment
       .field
         = f.text_field :comment, disabled: true, readonly: true
-      = f.submit "編集"
-    = @greeting.inspect
+      = link_to "編集", edit_admin_greeting_path, class: "btn btn-primary"
