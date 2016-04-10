@@ -18,7 +18,16 @@ class Admin::GreetingsController < Admin::AdminController
     else
       render :edit
     end
-  end
+		end
+
+		def enable
+				greeting = Greeting.find(params[:greeting_id])
+				if greeting.update(is_enable: greeting.is_enable? ? false : true)
+						render json: "Success", status: 200
+				else
+						render json: "no data"
+				end
+		end
 
   private
 
@@ -31,6 +40,6 @@ class Admin::GreetingsController < Admin::AdminController
   end
 
   def greeting_params
-    params.require(:greeting).permit(:name, :comment)
+				params.require(:greeting).permit(:name, :comment, :is_enable)
   end
 end

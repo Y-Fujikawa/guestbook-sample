@@ -33,4 +33,9 @@ section class="content-header"
                       = g.created_at
                     td.text-center.a_area
                       = link_to "詳細", admin_greeting_path(id: g.id), class: "btn btn-default btn-flat text-center"
+                    td.text-center.a_area
+                      - if g.is_enable?
+                        = link_to "非公開", admin_greeting_enable_path(greeting_id: g.id), id: "change_enable", class: "btn btn-default btn-flat text-center", remote: true
+                      - else
+                        = link_to "公開", admin_greeting_enable_path(greeting_id: g.id), id: "change_enable" ,class: "btn btn-default btn-flat text-center", remote: true
             = paginate @greetings
