@@ -20,6 +20,7 @@ section class="content-header"
                   th
                     | 作成日
                   th
+                  th
               tbody
                 - @greetings.each do |g|
                   tr
@@ -35,7 +36,9 @@ section class="content-header"
                       = link_to "詳細", admin_greeting_path(id: g.id), class: "btn btn-default btn-flat text-center"
                     td.text-center.a_area
                       - if g.is_enable?
-                        = link_to "非公開", admin_greeting_enable_path(greeting_id: g.id), id: "change_enable", class: "btn btn-default btn-flat text-center", remote: true
+                        button id="change_enable_#{g.id}" class="change_enable btn btn-default btn-flat text-center" 非公開
+                        input type="hidden" value="#{g.id}"
                       - else
-                        = link_to "公開", admin_greeting_enable_path(greeting_id: g.id), id: "change_enable" ,class: "btn btn-default btn-flat text-center", remote: true
+                        button id="change_enable_#{g.id}" class="change_enable btn btn-default btn-flat text-center" 公開
+                        input type="hidden" value="#{g.id}"
             = paginate @greetings
