@@ -1,6 +1,8 @@
   section class="content"
     = bootstrap_form_for([:admin, greeting], html: {class: 'form'}) do |f|
       .form-group
+        = f.text_field :id, disabled: true, readonly: true, class: "form-control"
+      .form-group
         = f.text_field :name, class: "form-control"
       .form-group
         = f.text_field :comment, class: "form-control"

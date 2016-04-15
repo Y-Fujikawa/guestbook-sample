@@ -1,17 +1,14 @@
 section class="content-header"
   h1 Greetings::show
   section class="content"
-    = form_for ([:admin, @greeting]) do |f|
-      .field
+    = form_for ([:admin, @greeting]), html: {class: 'form'} do |f|
+      .form-group
         = f.label :id
-      .field
-        = f.text_field :id, disabled: true, readonly: true
-      .field
+        = f.text_field :id, disabled: true, readonly: true, class: "form-control"
+      .form-group
         = f.label :name
-      .field
-        = f.text_field :name, disabled: true, readonly: true
-      .field
+        = f.text_field :name, disabled: true, readonly: true, class: "form-control"
+      .form-group
         = f.label :comment
-      .field
-        = f.text_field :comment, disabled: true, readonly: true
+        = f.text_field :comment, disabled: true, readonly: true, class: "form-control"
       = link_to "編集", edit_admin_greeting_path, class: "btn btn-primary"
