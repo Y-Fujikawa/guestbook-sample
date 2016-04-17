@@ -1,6 +1,6 @@
 class Admin::GreetingsController < Admin::AdminController
   before_action :set_greetings, only: [:index]
-  before_action :get_greeting, only: [:show, :edit, :update]
+  before_action :get_greeting, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -32,7 +32,16 @@ class Admin::GreetingsController < Admin::AdminController
     else
       render :edit
     end
-  end
+		end
+
+		def destroy
+				if @greeting.destroy
+						flash[:success] = "Deleted profile."
+						redirect_to admin_greetings_path
+				else
+						render :index
+				end
+		end
 
   def enable
     greeting = Greeting.find(params[:greeting_id])

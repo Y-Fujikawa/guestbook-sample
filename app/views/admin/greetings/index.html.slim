@@ -39,12 +39,11 @@ section class="content-header"
                     td
                       = g.created_at
                     td.text-center.a_area
-                      = link_to "詳細", admin_greeting_path(id: g.id), class: "btn btn-default btn-flat text-center"
+                      = link_to "詳細", admin_greeting_path(id: g.id), class: "btn btn-block btn-default text-center"
                     td.text-center.a_area
-                      - if g.is_enable?
-                        button id="change_enable_#{g.id}" class="change_enable btn btn-default btn-flat text-center" 非公開
-                        input type="hidden" value="#{g.id}"
-                      - else
-                        button id="change_enable_#{g.id}" class="change_enable btn btn-default btn-flat text-center" 公開
-                        input type="hidden" value="#{g.id}"
+                      button id="change_enable_#{g.id}" class="change_enable btn btn-block btn-default text-center"
+                        = g.is_enable? ? "非公開" : "公開"
+                      input type="hidden" value="#{g.id}"
+                    td.text-center.a_area
+                      = link_to "削除", admin_greeting_path(id: g.id), method: :delete, class: "btn btn-block btn-danger text-center"
             = paginate @greetings
