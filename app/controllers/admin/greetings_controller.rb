@@ -6,14 +6,28 @@ class Admin::GreetingsController < Admin::AdminController
   end
 
   def show
-  end
+		end
+
+		def new
+				@greeting = Greeting.new
+		end
 
   def edit
-  end
+		end
+
+		def create
+				@greeting = Greeting.new(greeting_params)
+				if @greeting.save
+						flash[:success] = "Created profile."
+						redirect_to admin_greetings_path
+				else
+						render :new
+				end
+		end
 
   def update
     if @greeting.update_attributes(greeting_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "Updated profile."
       redirect_to admin_greetings_path
     else
       render :edit

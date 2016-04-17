@@ -38,10 +38,20 @@ html
         section class="sidebar"
           ul class="sidebar-menu"
             li class="header" Sidebar
-            li class="active"
-              = link_to admin_greetings_path
+            li class="treeview"
+              a> href="#"
                 i class="fa fa-table"
                 span Greetings
+                i class="fa fa-angle-left pull-right"
+              ul class="treeview-menu"
+                li
+                  = link_to new_admin_greeting_path
+                    i class="fa fa-circle-o"
+                    | New
+                li
+                  = link_to admin_greetings_path
+                    i class="fa fa-circle-o"
+                    | List
       .content-wrapper
         = yield
       footer class="main-footer"
