@@ -1,0 +1,49 @@
+section class="content-header"
+  - flash.each do |type, msg|
+    div class="alert alert-#{type} alert-dismissible"
+      button type="button" class="close" data-dismiss="alert" aria-hidden="true" &times;
+      h4
+        i class="icon fa fa-check"
+        | #{msg}
+  h1 Greetings
+  section class="content"
+    .row
+      .col-xs-12
+        .box
+          .box-header
+            h3.box-title
+              | List
+          .box-body.table-responsive.o-padding
+            table.table.table-hover.table-bordered
+              thead
+              tr
+                  th
+                    | id
+                  th
+                    | 名前
+                  th
+                    | コメント
+                  th
+                    | 作成日
+                  th
+                  th
+              tbody
+                - @greetings.each do |g|
+                  tr
+                    td
+                      = g.id
+                    td
+                      = g.name
+                    td
+                      = g.comment
+                    td
+                      = g.created_at
+                    td.text-center.a_area
+                      = link_to "詳細", admin_greeting_path(id: g.id), class: "btn btn-block btn-default text-center"
+                    td.text-center.a_area
+                      button id="change_enable_#{g.id}" class="change_enable btn btn-block btn-default text-center"
+                        = g.is_enable? ? "非公開" : "公開"
+                      input type="hidden" value="#{g.id}"
+                    td.text-center.a_area
+                      = link_to "削除", admin_greeting_path(id: g.id), method: :delete, class: "btn btn-block btn-danger text-center"
+            = paginate @greetings

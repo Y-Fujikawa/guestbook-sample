@@ -38,11 +38,21 @@ html
         section class="sidebar"
           ul class="sidebar-menu"
             li class="header" Sidebar
-            li class="active"
+            li class="treeview"
               a> href="#"
                 i class="fa fa-table"
-                span Guest List
+                span Greetings
+                i class="fa fa-angle-left pull-right"
+              ul class="treeview-menu"
+                li
+                  = link_to new_admin_greeting_path
+                    i class="fa fa-circle-o"
+                    | New
+                li
+                  = link_to admin_greetings_path
+                    i class="fa fa-circle-o"
+                    | List
       .content-wrapper
         = yield
       footer class="main-footer"
-        strong Copyright &copy; 2015 Company. All rights reserved.
+        strong Copyright &copy; 2016 Company. All rights reserved.
