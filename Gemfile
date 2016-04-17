@@ -61,6 +61,7 @@ end
 
 gem 'bootstrap-sass-rails'
 gem 'bootstrap_form'
+gem 'font-awesome-sass'
 gem 'kaminari'
 gem 'therubyracer'
 gem 'dotenv-rails'

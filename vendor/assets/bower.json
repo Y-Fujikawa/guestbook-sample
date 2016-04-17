@@ -4,7 +4,6 @@
     "jquery-ujs": "latest",
     "bootstrap": "latest",
     "bootstrap-sass": "latest",
-    "fontawesome": "latest",
     "admin-lte": "latest"
   }
 }

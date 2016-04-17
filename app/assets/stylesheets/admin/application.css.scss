@@ -14,10 +14,9 @@
  *= require admin-lte/dist/css/AdminLTE
  *= require admin-lte/dist/css/skins/skin-blue
  *= require admin-lte/plugins/iCheck/minimal/blue.css
- *= require fontawesome/css/font-awesome
  *= require_self
  *= require_tree .
  */
-$fa-font-path:  "/bower_components/font-awesome/fonts";
-@import "fontawesome/scss/font-awesome";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "../common";
