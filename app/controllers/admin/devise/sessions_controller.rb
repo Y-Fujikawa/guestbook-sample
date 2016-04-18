@@ -1,7 +1,7 @@
 class Admin::Devise::SessionsController < Devise::SessionsController
   layout "admin/layouts/login"
 
-		after_action :delete_flash, only: [:create]
+	after_action :delete_flash, only: [:create]
 
   # Admin画面のログイン -> Adminホーム画面へリダイレクト
   def after_sign_in_path_for(resource)
@@ -11,11 +11,11 @@ class Admin::Devise::SessionsController < Devise::SessionsController
   # Admin画面のログアウト -> ログイン画面へリダイレクト
   def after_sign_out_path_for(resource)
     admin_admin_user_session_path
-		end
+	end
 
-		def delete_flash
-				if flash[:notice].present?
-						flash.discard(:notice)
-				end
+	def delete_flash
+		if flash[:notice].present?
+      flash.discard(:notice)
 		end
+	end
 end
