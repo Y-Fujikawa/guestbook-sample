@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery-ujs
-//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require admin-lte/dist/js/app.js
 //= require admin-lte/plugins/iCheck/icheck.min.js
 //= require_tree .
