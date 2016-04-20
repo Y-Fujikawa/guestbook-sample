@@ -9,13 +9,13 @@
       = devise_error_messages!
       .form-group.has-feedback
         = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email"
-        span class="glyphicon glyphicon-envelope form-control-feedback"
+        = icon("fa fa-envelope-o", class: "form-control-feedback")
       .form-group.has-feedback
         = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password"
-        span class="glyphicon glyphicon-lock form-control-feedback"
+        = icon("key", class: "form-control-feedback")
       .form-group.has-feedback
         = f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Retype password"
-        span class="glyphicon glyphicon-log-in form-control-feedback"
+        = icon("key", class: "form-control-feedback")
       #col-xs-4.actions
         = f.submit "Sign up", class: "btn btn-primary btn-block btn-flat"
     = render "admin/devise/shared/links"

@@ -74,7 +74,9 @@ ja:
           attributes:
             email:
               blank: "は必ず入力してください。"
+              taken: "はすでに登録されています。"
             password:
               blank: "は必ず入力してください。"
+              too_short: "は8文字以上を入力してください。"
             reset_password_token:
               invalid: "リセットパスワードトークンが無効です。"

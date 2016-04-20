@@ -9,11 +9,11 @@
       = devise_error_messages!
       = f.hidden_field :reset_password_token
       .form-group.has-feedback
-        = f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control", placeholder: "Email"
-        span class="glyphicon glyphicon-envelope form-control-feedback"
+        = f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control", placeholder: "New password"
+        = icon("key", class: "form-control-feedback")
       .form-group.has-feedback
         = f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm new password"
-        span class="glyphicon glyphicon-envelope form-control-feedback"
+        = icon("key", class: "form-control-feedback")
       #col-xs-4.actions
         = f.submit "Change my password", class: "btn btn-primary btn-block btn-flat"
     = render "admin/devise/shared/links"

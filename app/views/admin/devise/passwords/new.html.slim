@@ -9,7 +9,7 @@
       = devise_error_messages!
       .form-group.has-feedback
         = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email"
-        span class="glyphicon glyphicon-envelope form-control-feedback"
+        = icon("fa fa-envelope-o", class: "form-control-feedback")
       #col-xs-4.actions
         = f.submit "Send me reset password instructions", class: "btn btn-primary btn-block btn-flat"
     = render "admin/devise/shared/links"
