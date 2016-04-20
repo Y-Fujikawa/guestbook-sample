@@ -14,7 +14,7 @@
 //= require jquery-ujs
 //= require admin-lte/bootstrap/js/bootstrap
 //= require admin-lte/dist/js/app.js
-//= require admin-lte/plugins/iCheck/icheck.min.js
+//= require icheck
 //= require_tree .
 $(function () {
   $('input').iCheck({
