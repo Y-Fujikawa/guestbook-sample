@@ -66,3 +66,7 @@ gem 'font-awesome-sass'
 gem 'kaminari'
 gem 'therubyracer'
 gem 'dotenv-rails'
+
+# Image uplocad
+gem 'fog'
+gem 'carrierwave'
