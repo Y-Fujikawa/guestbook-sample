@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-  get 'greetings/index'
+    get 'greetings/index'
   end
 
   scope "(:locale)" do
@@ -11,8 +11,8 @@ Rails.application.routes.draw do
       devise_for :admin_users, controllers: { sessions: 'admin/devise/sessions', registrations: 'admin/devise/registrations', passwords: 'admin/devise/passwords' }
       get '/', :to => 'home#index'
       resources :greetings do
-								get 'enable'
-						end
+        get 'enable'
+      end
     end
   end
 end

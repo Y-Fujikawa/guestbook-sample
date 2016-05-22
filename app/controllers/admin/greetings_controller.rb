@@ -6,24 +6,24 @@ class Admin::GreetingsController < Admin::AdminController
   end
 
   def show
-		end
+  end
 
-		def new
-				@greeting = Greeting.new
-		end
+  def new
+    @greeting = Greeting.new
+  end
 
   def edit
-		end
+  end
 
-		def create
-				@greeting = Greeting.new(greeting_params)
-				if @greeting.save
-						flash[:success] = "Created profile."
-						redirect_to admin_greetings_path
-				else
-						render :new
-				end
-		end
+  def create
+    @greeting = Greeting.new(greeting_params)
+    if @greeting.save
+        flash[:success] = "Created profile."
+        redirect_to admin_greetings_path
+    else
+        render :new
+    end
+  end
 
   def update
     if @greeting.update_attributes(greeting_params)
@@ -32,16 +32,16 @@ class Admin::GreetingsController < Admin::AdminController
     else
       render :edit
     end
-		end
+  end
 
-		def destroy
-				if @greeting.destroy
-						flash[:success] = "Deleted profile."
-						redirect_to admin_greetings_path
-				else
-						render :index
-				end
-		end
+  def destroy
+    if @greeting.destroy
+        flash[:success] = "Deleted profile."
+        redirect_to admin_greetings_path
+    else
+        render :index
+    end
+  end
 
   def enable
     greeting = Greeting.find(params[:greeting_id])
@@ -63,6 +63,6 @@ class Admin::GreetingsController < Admin::AdminController
   end
 
   def greeting_params
-    params.require(:greeting).permit(:name, :comment, :is_enable)
+    params.require(:greeting).permit(:name, :comment, :is_enable, :image, :image_cache)
   end
 end
