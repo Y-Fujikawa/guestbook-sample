@@ -3,7 +3,7 @@ class AddIsEnableToGreetings < ActiveRecord::Migration
     add_column :greetings, :is_enable, :boolean, default: true, after: :comment
 		end
 
-		def down
-				remove_column :greetings, :is_enable, :boolean
-		end
+	def down
+		remove_column :greetings, :is_enable, :boolean
+	end
 end

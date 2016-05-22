@@ -67,6 +67,6 @@ gem 'kaminari'
 gem 'therubyracer'
 gem 'dotenv-rails'
 
-# Image uplocad
+# Image upload
 gem 'fog'
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'

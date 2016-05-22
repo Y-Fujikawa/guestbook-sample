@@ -11,4 +11,6 @@ section class="content-header"
       .form-group
         = f.label :comment
         = f.text_field :comment, disabled: true, readonly: true, class: "form-control"
+      .form-group
+        = image_tag @greeting.image.url
       = link_to "編集", edit_admin_greeting_path, class: "btn btn-primary"
