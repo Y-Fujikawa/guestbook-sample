@@ -12,14 +12,14 @@ CarrierWave.configure do |config|
       config.fog_directory = 'guestbook-image'
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/guestbook-image'
     when 'staging'
-      config.fog_directory = 'guestbook-image/stg'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/guestbook-image/stg'
+      config.fog_directory = 'stg-guestbook-image'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/stg-guestbook-image'
     when 'development'
-      config.fog_directory = 'guestbook-image/dev'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/guestbook-image/dev'
+      config.fog_directory = 'dev-guestbook-image'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/dev-guestbook-image'
     when 'test'
-      config.fog_directory = 'test.dummy'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/guestbook-image/test'
+      config.fog_directory = 'test-guestbook-image'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/test-guestbook-image'
   end
 end
 
