@@ -70,3 +70,4 @@ gem 'dotenv-rails'
 # Image upload
 gem 'fog'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave-magic'

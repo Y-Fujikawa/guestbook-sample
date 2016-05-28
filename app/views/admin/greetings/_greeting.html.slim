@@ -7,7 +7,7 @@
       .form-group
         = f.text_field :comment, class: "form-control"
       .form-group
-        = image_tag @greeting.image.url if @greeting.image?
+        = image_tag @greeting.image.url if @greeting.image? && @greeting.errors[:image].blank?
         = f.file_field :image, class: "form-control"
-        = f.hidden_field :image_cache
+        = f.hidden_field :image_cache if @greeting.errors[:image].blank?
       = f.submit "submit", class: "btn btn-primary"
