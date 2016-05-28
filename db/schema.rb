@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410092506) do
+ActiveRecord::Schema.define(version: 20160519002349) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160410092506) do
     t.string   "name",       limit: 255
     t.text     "comment",    limit: 65535
     t.boolean  "is_enable",                default: true
+    t.string   "image",      limit: 255,   default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
   end

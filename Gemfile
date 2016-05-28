@@ -66,3 +66,8 @@ gem 'font-awesome-sass'
 gem 'kaminari'
 gem 'therubyracer'
 gem 'dotenv-rails'
+
+# Image upload
+gem 'fog'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave-magic'
