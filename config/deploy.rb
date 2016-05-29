@@ -37,7 +37,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets bundle public/system
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
-	DEVISE_SECRET_KEY: ENV["DEVISE_SECRET_KEY"],
+  DEVISE_SECRET_KEY: ENV["DEVISE_SECRET_KEY"],
   IMG_UP_AWS_S3_ACCESS_KEY_ID: ENV["IMG_UP_AWS_S3_ACCESS_KEY_ID"],
   IMG_UP_AWS_S3_SECRET_ACCESS_KEY: ENV["IMG_UP_AWS_S3_SECRET_ACCESS_KEY"]
 }
