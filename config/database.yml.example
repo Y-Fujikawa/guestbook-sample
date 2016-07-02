@@ -34,7 +34,7 @@ staging:
   <<: *default
   database: guestbook_sample
   username: guestbook_sample
-  password: <%= ENV['DATABASE_PASSWORD_STG'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -59,4 +59,4 @@ production:
   <<: *default
   database: guestbook_sample
   username: guestbook_sample
-  password: <%= ENV['DATABASE_PASSWORD_PROD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
