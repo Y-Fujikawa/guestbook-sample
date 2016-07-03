@@ -1,5 +1,5 @@
-# config valid only for Capistrano 3.4.0
-lock '3.4.0'
+# config valid only for Capistrano 3.5.0
+lock '3.5.0'
 
 set :user, 'www'
 set :password, 'sample'

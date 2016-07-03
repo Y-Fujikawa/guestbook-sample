@@ -40,7 +40,7 @@ group :development do
   gem 'spring'
 
   # deploy
-  gem 'capistrano', '~> 3.0'
+  gem 'capistrano', '~> 3.5'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
@@ -52,8 +52,8 @@ group :development do
   # convert erb to slim
   gem 'html2slim'
 
-		# Local Mail Test
-		gem 'mailcatcher'
+	# Local Mail Test
+	gem 'mailcatcher'
 end
 
 # Use debugger
